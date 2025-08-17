@@ -8,5 +8,44 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/index.tsx"></script>
+
+    <!-- Firebase Config -->
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
+      import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } 
+        from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDWKzidMzexeMGVaufxiXF1W-6FBipYpv4",
+        authDomain: "socialx-baa4b.firebaseapp.com",
+        projectId: "socialx-baa4b",
+        storageBucket: "socialx-baa4b.firebasestorage.app",
+        messagingSenderId: "331108386740",
+        appId: "1:331108386740:web:54cea90d7bef655cfd94e1",
+        measurementId: "G-4M6SB4617J"
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const auth = getAuth(app);
+
+      // Example signup & login
+      window.signup = (email, password) => {
+        return createUserWithEmailAndPassword(auth, email, password)
+          .then(userCredential => {
+            console.log("Signed up:", userCredential.user);
+          })
+          .catch(console.error);
+      };
+
+      window.login = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password)
+          .then(userCredential => {
+            console.log("Logged in:", userCredential.user);
+          })
+          .catch(console.error);
+      };
+    </script>
   </body>
 </html>

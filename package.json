@@ -1,5 +1,5 @@
 {
-  "name": "vite-social-app",
+  "name": "vite-social-firebase",
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
