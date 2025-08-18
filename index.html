@@ -30,20 +30,15 @@
       const analytics = getAnalytics(app);
       const auth = getAuth(app);
 
-      // Example signup & login
       window.signup = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
-          .then(userCredential => {
-            console.log("Signed up:", userCredential.user);
-          })
+          .then(userCredential => console.log("Signed up:", userCredential.user))
           .catch(console.error);
       };
 
       window.login = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
-          .then(userCredential => {
-            console.log("Logged in:", userCredential.user);
-          })
+          .then(userCredential => console.log("Logged in:", userCredential.user))
           .catch(console.error);
       };
     </script>
