@@ -3,10 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SocialX Web</title>
+    <title>SocialX</title>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <h1>🚀 SocialX</h1>
+    <div id="app">
+      <div id="user"></div>
+      <div id="auth-ui">
+        <input id="email" type="email" placeholder="Email" />
+        <input id="password" type="password" placeholder="Password" />
+        <button id="signup">Sign Up</button>
+        <button id="login">Login</button>
+        <button id="logout" style="display:none;">Logout</button>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
